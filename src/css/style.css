@@ -56,3 +56,33 @@ button:hover {
   border-radius: 4px;
   text-align: center;
 }
+
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  button {
+    width: 100%;
+    max-width: 300px;
+    display: block;
+    margin: 10px auto;
+    font-size: 18px;
+  }
+
+  #exercise h2 {
+    font-size: 18px;
+  }
+
+  #exercise-bodyPart {
+    font-size: 16px;
+  }
+
+  #exercise img {
+    max-width: 90%;
+  }
+}
