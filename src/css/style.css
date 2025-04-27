@@ -1,0 +1,44 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  padding: 30px;
+  background-color: #f9f9f9;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#exercise {
+  margin-top: 30px;
+}
+
+#exercise h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+#exercise img {
+  max-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: 10px;
+  display: none;
+}
