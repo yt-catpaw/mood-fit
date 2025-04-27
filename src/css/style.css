@@ -1,6 +1,7 @@
 body {
   font-family: sans-serif;
   text-align: center;
+  line-height: 1.6;
   padding: 30px;
   background-color: #f9f9f9;
 }
@@ -17,6 +18,7 @@ button {
   border: none;
   border-radius: 6px;
   background-color: #4caf50;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -27,7 +29,7 @@ button:hover {
 }
 
 #exercise {
-  margin-top: 30px;
+  margin-top: 50px;
   text-align: center;
 }
 
@@ -38,7 +40,7 @@ button:hover {
 
 #exercise img {
   max-width: 300px;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   border-radius: 8px;
   margin-top: 10px;
   display: block;
