@@ -28,6 +28,7 @@ button:hover {
 
 #exercise {
   margin-top: 30px;
+  text-align: center;
 }
 
 #exercise h2 {
@@ -40,5 +41,7 @@ button:hover {
   border: 1px solid #ccc;
   border-radius: 8px;
   margin-top: 10px;
-  display: none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
