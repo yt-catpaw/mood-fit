@@ -9,9 +9,16 @@ interface Exercise {
   instructions: string[];
 }
 
+const exercisesByIntensity: { [key in "軽め" | "普通" | "きつめ"]: string[] } =
+  {
+    軽め: ["waist", "neck", "lower legs"], // 腰、首、下腿
+    普通: ["back", "chest", "shoulders", "upper arms", "cardio"], // 背中、胸、肩、上腕、有酸素運動
+    きつめ: ["upper legs", "lower arms"], // 大腿、下腕
+  };
+
 async function fetchExercises(
-  level: string,
-  limit: number = 100
+  level: "軽め" | "普通" | "きつめ",
+  limit: number = 1000
 ): Promise<void> {
   try {
     const response = await fetch(
@@ -33,14 +40,23 @@ async function fetchExercises(
 
     const data: Exercise[] = await response.json();
 
+    const filteredExercises = data.filter((exercise) =>
+      exercisesByIntensity[level].includes(exercise.bodyPart)
+    );
+
     const exerciseDiv = document.getElementById("exercise") as HTMLElement;
     const exerciseTitle = exerciseDiv.querySelector("h2");
+    const exerciseBodyPart = exerciseDiv.querySelector(
+      "#exercise-bodyPart"
+    ) as HTMLElement;
     const exerciseImg = exerciseDiv.querySelector("img") as HTMLImageElement;
 
-    const exercise = data[Math.floor(Math.random() * data.length)];
+    const randomExercise =
+      filteredExercises[Math.floor(Math.random() * filteredExercises.length)];
 
-    exerciseTitle!.innerText = exercise.name;
-    exerciseImg.src = exercise.gifUrl;
+    exerciseTitle!.innerText = randomExercise.name;
+    exerciseBodyPart!.innerText = `部位: ${randomExercise.bodyPart}`;
+    exerciseImg.src = randomExercise.gifUrl;
     exerciseImg.style.display = "block";
   } catch (error) {
     console.error("データ取得に失敗しました:", error);
